@@ -19,4 +19,26 @@ const resultat = courses.join("\n");
 writeFileSync("courses.txt", resultat);
 
 // Affichage de résultat
-console.log(resultat)
+console.log(resultat);
+
+// objet javascript
+const profil = {
+  prenom: "Ada",
+  langages: ["HTML", "CSS", "JavaScript"],
+  debutante: true,
+};
+
+// Écriture du fichier profil.json
+writeFileSync("profil.json", JSON.stringify(profil, null, 2));
+
+// Lecture du fichier profil.json 
+const contenuProfil = readFileSync("profil.json", "utf8");
+
+// Tranformation en objet javascript
+const profilLu = JSON.parse(contenuProfil);
+
+// Affichage prénom
+console.log(profilLu.prenom)
+
+// Affichage nombre de langages
+console.log(profilLu.langages.length)
